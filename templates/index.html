@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>home</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://images.unsplash.com/photo-1578916171728-46686eac8d58?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"); /* Replace "your-image-url.jpg" with the URL or path to your desired background image */
+        background-size: cover;
+        background-position: center;
+        margin-top: 100px;
+      }
+
+      .jumbotron {
+        background-color: rgba(248, 249, 250, 0.8);
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h1 {
+        text-align: center;
+        color: #45a049;
+        margin-bottom: 30px;
+        font-size: 36px;  
+      }
+
+      .form-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .file-upload {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+
+      .file-upload input[type="file"] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+      }
+
+      .file-upload label {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .file-upload label:hover {
+        background-color: #45a049;
+      }
+
+      input[type="submit"] {
+        display: block;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 auto;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Getting response for your data</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+          <div class="form-row">
+            <div class="file-upload">
+              <label for="file">Choose File</label>
+              <input type="file" name="file" id="file" accept=".csv" required>
+            </div>
+            <input type="submit" value="Process">
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
